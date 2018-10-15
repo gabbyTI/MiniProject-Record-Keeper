@@ -1,0 +1,58 @@
+﻿@model MVCHello.Models.Members
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="container">
+            <div class="card card-register mx-auto mt-5">
+                <h4 class="card-header">Login</h4>
+                <div class="card-body">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label" })
+                            @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label" })
+                            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Login" class="btn btn-primary" />
+                    </div>
+                    <div class="text-center">
+                        <a class="d-block small mt-3" href="@Url.Action("Register", "Account")">Dont't have an account? Register now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    @Scripts.Render("~/Mybundles/bootstrap")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+</body>
+</html>
