@@ -4,6 +4,8 @@ This is for now just a simple login/Registrtion i am using to practice my C# MVC
 Feel free to fork,clone and so on
 
 # Packages installed
-System.Data.Entity
-Microsoft.AspNetCore.Identity
-Microsoft.AspNetCore.mvc
+System.Data.Entity,
+Microsoft.AspNetCore.Identity,
+Microsoft.AspNetCore.mvc,
+Microsoft.AspNet.Identity.EntityFramework
+
